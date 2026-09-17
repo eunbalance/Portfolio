@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eunsu Kong — UX/UI Portfolio</title>
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #111111; }
+  body, p, span, h1, h2, h3, h4, a, div { word-break: keep-all; overflow-wrap: break-word; }
+  a { color: #F5F5F3; text-decoration: none; }
+  a:hover { color: #8F8F8C; }
+  @keyframes pulseRing {
+    0%   { transform: scale(0.6); opacity: 0.9; }
+    70%  { transform: scale(2.2); opacity: 0; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+</style>
+</helmet>
+<div style="width: 100%; max-width: 1440px; min-width: 1100px; margin: 0 auto; background: #111111; font-family: 'Space Grotesk', 'Pretendard Variable', Pretendard, 'Helvetica Neue', Helvetica, sans-serif; color: #F5F5F3; overflow: visible;">
+    <header style="position: sticky; top: 0; height: 96px; margin-bottom: -96px; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; box-sizing: border-box; z-index: 40;">
+      <div style="position: absolute; left: 0; right: 0; top: 0; height: 190px; pointer-events: none; background: {{ headerVeil }}; transition: background 700ms ease;"></div>
+      <span style="position: relative; font-size: 17px; font-weight: 500; letter-spacing: 0.02em; color: {{ headerInk }}; text-shadow: {{ headerShadow }}; transition: color 600ms ease;">Eunsu Kong</span>
+      <nav style="position: relative; display: flex; gap: 40px; font-size: 14px; letter-spacing: 0.08em; color: {{ headerInk }}; text-shadow: {{ headerShadow }}; transition: color 600ms ease;">
+        <span onClick="{{ goWorkSection }}" style="cursor: pointer; padding-bottom: 3px; color: inherit; transition: opacity 300ms ease;" style-hover="opacity: 0.6;">work</span>
+        <span onClick="{{ goAbout }}" style="cursor: pointer; padding-bottom: 3px; color: inherit; transition: opacity 300ms ease;" style-hover="opacity: 0.6;">about me</span>
+        <span onClick="{{ openDoc }}" style="cursor: pointer; padding-bottom: 3px; color: inherit; transition: opacity 300ms ease;" style-hover="opacity: 0.6;">contact</span>
+      </nav>
+    </header>
+
+  <!-- ============ SECTION 1 — WHY ============ -->
+  <section id="why" data-screen-label="01 WHY" style="position: relative; height: 900px; overflow: hidden; background: #111111;">
+    <div style="position: absolute; inset: 0; background: #111111;"></div>
+    <div style="position: absolute; inset: 0; opacity: {{ bgOpacity }}; transition: opacity 1200ms cubic-bezier(0.22,1,0.36,1);">
+      <div style="position: absolute; inset: 0; background: #EFEDE6;"></div>
+        <div style="position: absolute; left: 630px; top: 10px; width: 210px; height: 210px; opacity: {{ c1o }}; transform: {{ c1t }}; transition: opacity 1000ms cubic-bezier(0.16,1,0.3,1) 0ms, transform 1200ms cubic-bezier(0.16,1,0.3,1) 0ms;">
+          <div style="position: absolute; inset: 0; background-image: url('/assets/ocean-hero.png'); background-size: 750px 750px; background-position: 30px 30px; clip-path: path('M 30,30 L 180,30 L 180,80 C 206,70 206,140 180,130 L 180,180 L 130,180 C 140,206 70,206 80,180 L 30,180 Z'); box-shadow: 0 16px 36px rgba(24,22,18,0.14);"></div>
+        </div>
+        <div style="position: absolute; left: 780px; top: 160px; width: 210px; height: 210px; opacity: {{ c2o }}; transform: {{ c2t }}; transition: opacity 1000ms cubic-bezier(0.16,1,0.3,1) 140ms, transform 1200ms cubic-bezier(0.16,1,0.3,1) 140ms;">
+          <div style="position: absolute; inset: 0; background-image: url('/assets/ocean-hero.png'); background-size: 750px 750px; background-position: -120px -120px; clip-path: path('M 30,30 L 180,30 L 180,80 C 206,70 206,140 180,130 L 180,180 L 130,180 C 140,206 70,206 80,180 L 30,180 Z'); box-shadow: 0 16px 36px rgba(24,22,18,0.14);"></div>
+        </div>
+        <div style="position: absolute; left: 630px; top: 310px; width: 210px; height: 210px; opacity: {{ c3o }}; transform: {{ c3t }}; transition: opacity 1000ms cubic-bezier(0.16,1,0.3,1) 280ms, transform 1200ms cubic-bezier(0.16,1,0.3,1) 280ms;">
+          <div style="position: absolute; inset: 0; background-image: url('/assets/ocean-hero.png'); background-size: 750px 750px; background-position: 30px -270px; clip-path: path('M 30,30 L 180,30 L 180,80 C 206,70 206,140 180,130 L 180,180 L 130,180 C 140,206 70,206 80,180 L 30,180 Z'); box-shadow: 0 16px 36px rgba(24,22,18,0.14);"></div>
+        </div>
+        <div style="position: absolute; left: 780px; top: 460px; width: 210px; height: 210px; opacity: {{ c4o }}; transform: {{ c4t }}; transition: opacity 1000ms cubic-bezier(0.16,1,0.3,1) 420ms, transform 1200ms cubic-bezier(0.16,1,0.3,1) 420ms;">
+          <div style="position: absolute; inset: 0; background-image: url('/assets/ocean-hero.png'); background-size: 750px 750px; background-position: -120px -420px; clip-path: path('M 30,30 L 180,30 L 180,80 C 206,70 206,140 180,130 L 180,180 L 130,180 C 140,206 70,206 80,180 L 30,180 Z'); box-shadow: 0 16px 36px rgba(24,22,18,0.14);"></div>
+        </div>
+    </div>
+
+    <div style="position: absolute; inset: 0; opacity: 0.16; mix-blend-mode: overlay; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22/></filter><rect width=%22180%22 height=%22180%22 filter=%22url(%23n)%22/></svg>'); background-size: 180px 180px;"></div>
+
+
+    <!-- huge solid-black "why", aligned so the two silhouettes read as looking down toward it -->
+    <div style="position: absolute; left: 0; right: 0; top: 300px; display: flex; justify-content: flex-start; padding-left: 104px; box-sizing: border-box; z-index: 4;">
+      <span ref="{{ whyRef }}" onMouseEnter="{{ revealOn }}" onMouseLeave="{{ revealOff }}" style="transform: translateX({{ whyShift }}px); transition: transform 1100ms cubic-bezier(0.22,1,0.36,1); position: relative; display: block; cursor: default; width: 356px; height: 226px;">
+        <svg width="356" height="226" viewBox="0 0 356 226" style="position: absolute; left: 0; top: 0; overflow: visible;">
+          <defs>
+            <pattern id="seafill" patternUnits="userSpaceOnUse" x="0" y="0" width="1440" height="900">
+              <image href="/assets/ocean-hero.png" x="{{ fillX }}" y="{{ fillY }}" width="1440" height="900" preserveAspectRatio="xMidYMid slice"></image>
+            </pattern>
+          </defs>
+          <text x="0" y="182" fill="url(#seafill)" style="font-family: 'Space Grotesk', sans-serif; font-size: 190px; font-weight: 500; letter-spacing: -10.5px;">why</text>
+          <text x="0" y="182" fill="#000000" opacity="{{ inkOpacity }}" style="font-family: 'Space Grotesk', sans-serif; font-size: 190px; font-weight: 500; letter-spacing: -10.5px; transition: opacity 700ms cubic-bezier(0.22,1,0.36,1);">why</text>
+        </svg>
+      </span>
+    </div>
+
+    <div style="position: absolute; left: 104px; top: 570px; width: 620px; z-index: 3; font-family: 'Pretendard Variable', Pretendard, 'Space Grotesk', sans-serif; opacity: {{ copyOpacity }}; transform: translateY({{ copyShift }}px); transition: opacity 900ms cubic-bezier(0.22,1,0.36,1) 250ms, transform 1100ms cubic-bezier(0.22,1,0.36,1) 250ms;">
+      <p style="margin: 0; font-size: 22px; line-height: 1.75; font-weight: 400; color: #2B2B2B; text-shadow: none; text-wrap: pretty;">사용자의 ‘왜’를 파고들어 문제를 재정의하고,<br />더 나은 경험으로 연결합니다</p>
+    </div>
+
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 260px; background: linear-gradient(180deg, rgba(17,17,17,0) 0%, rgba(17,17,17,0.55) 45%, rgba(17,17,17,0.9) 78%, #111111 100%); z-index: 2;"></div>
+
+    <div style="position: absolute; left: 0; right: 0; bottom: 48px; display: flex; justify-content: center; z-index: 4;">
+      <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; letter-spacing: 0.18em; color: #8F8F8C; opacity: {{ hintOpacity }}; transition: opacity 600ms ease;">HOVER “WHY”</span>
+    </div>
+
+
+  </section>
+
+  <!-- ============ SECTION 2 — CTA ============ -->
+  <section id="cta" data-screen-label="02 CTA" style="position: relative; height: 820px; background: #111111; overflow: hidden;">
+    <div style="position: absolute; inset: 0; opacity: 0.10; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22/></filter><rect width=%22180%22 height=%22180%22 filter=%22url(%23n)%22/></svg>'); background-size: 180px 180px;"></div>
+
+    <div style="position: relative; display: grid; grid-template-columns: minmax(320px, 420px) minmax(0, 1fr); align-items: center; height: 100%; padding: 0 0 0 104px; box-sizing: border-box; gap: 48px;">
+      <div>
+        <p style="margin: 0 0 44px; font-size: 12px; letter-spacing: 0.22em; color: #8F8F8C;">EXPLORE</p>
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <span onClick="{{ goWorkSection }}" style="font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -0.02em; color: #8F8F8C; cursor: pointer; width: fit-content; transition: color 380ms cubic-bezier(0.22,1,0.36,1), transform 380ms cubic-bezier(0.22,1,0.36,1);" style-hover="color: #F5F5F3; transform: translateX(14px);">work</span>
+          <span onClick="{{ goAbout }}" style="font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -0.02em; color: #8F8F8C; cursor: pointer; width: fit-content; transition: color 380ms cubic-bezier(0.22,1,0.36,1), transform 380ms cubic-bezier(0.22,1,0.36,1);" style-hover="color: #F5F5F3; transform: translateX(14px);">about me</span>
+          <span onClick="{{ openDoc }}" style="font-size: 56px; line-height: 1.05; font-weight: 500; letter-spacing: -0.02em; color: #8F8F8C; cursor: pointer; width: fit-content; transition: color 380ms cubic-bezier(0.22,1,0.36,1), transform 380ms cubic-bezier(0.22,1,0.36,1);" style-hover="color: #F5F5F3; transform: translateX(14px);">contact</span>
+        </div>
+        <p style="margin: 52px 0 0; font-size: 15px; line-height: 1.85; color: #8F8F8C; font-family: 'Pretendard Variable', Pretendard, sans-serif; font-weight: 400;">네 개의 UX/UI 프로젝트, 리서치에서 검증까지,<br />그리고 수많은 ‘왜’.</p>
+      </div>
+
+      <!-- Figma screen photo (hand on mouse) -->
+      <div style="position: relative; height: 620px; border-left: 1px solid #333333; background: #0d0d0d; overflow: hidden;">
+        <img src="uploads/pasted-1789450770983-0.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 88% 72%; filter: saturate(0.85) contrast(1.02);" />
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #111111 0%, rgba(17,17,17,0.6) 14%, rgba(17,17,17,0) 42%);"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(17,17,17,0.55) 0%, rgba(17,17,17,0) 24%, rgba(17,17,17,0) 74%, rgba(17,17,17,0.6) 100%);"></div>
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.17);"></div>
+        <div style="position: absolute; left: 0; right: 0; top: 0; height: 40%; background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.12) 45%, rgba(0,0,0,0) 100%);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 — Highlights ============ -->
+  <section id="highlights" data-screen-label="03 Highlights" style="position: relative; background: #111111; padding: 40px 104px 140px; box-sizing: border-box;">
+    <div style="position: absolute; inset: 0; opacity: 0.08; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22/></filter><rect width=%22180%22 height=%22180%22 filter=%22url(%23n)%22/></svg>'); background-size: 180px 180px;"></div>
+    <div style="position: relative;">
+      <p data-reveal="" style="margin: 0 0 28px; font-size: 12px; letter-spacing: 0.22em; color: #8F8F8C;">HIGHLIGHTS</p>
+      <h2 data-reveal="" style="margin: 0 0 76px; font-size: 76px; line-height: 1.04; font-weight: 500; letter-spacing: -0.03em; color: #F5F5F3;">Awards &amp; Certifications</h2>
+
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+        <div style="margin-bottom: 72px;">
+          <p data-reveal="" style="margin: 0 0 20px; font-size: 12px; letter-spacing: 0.2em; color: #8F8F8C;">{{ g.label }}</p>
+          <div data-reveal="" style="display: grid; grid-template-columns: minmax(180px, 300px) minmax(160px, 260px) minmax(0, 1fr) 84px; gap: 0 28px; padding-bottom: 14px; border-bottom: 1px solid #333333; font-size: 11px; letter-spacing: 0.16em; color: #6F6F6B;">
+            <span>TITLE</span><span>ORGANIZATION</span><span>DETAIL</span><span style="text-align: right;">DATE</span>
+          </div>
+          <sc-for list="{{ g.rows }}" as="row" hint-placeholder-count="4">
+            <div data-reveal="" style="display: grid; grid-template-columns: minmax(180px, 300px) minmax(160px, 260px) minmax(0, 1fr) 84px; gap: 0 28px; align-items: baseline; padding: 26px 12px; margin: 0 -12px; border-bottom: 1px solid #262626; transition: background 320ms ease;" style-hover="background: #191919;">
+              <span style="font-size: 20px; font-weight: 500; letter-spacing: -0.01em; color: #F5F5F3; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ row.title }}</span>
+              <span style="font-size: 15px; color: #C8C8C5; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ row.org }}</span>
+              <span style="font-size: 15px; line-height: 1.7; color: #8F8F8C; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ row.detail }}</span>
+              <span style="font-size: 14px; letter-spacing: 0.04em; color: #8F8F8C; text-align: right;">{{ row.date }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4 — Work ============ -->
+  <section id="work" data-screen-label="04 Work" style="position: relative; background: #111111; padding: 140px 104px 180px; box-sizing: border-box;" onMouseMove="{{ track }}">
+    <div style="display: flex; align-items: baseline; gap: 28px; margin-bottom: 120px;">
+      <h2 data-reveal="" style="margin: 0; font-size: 150px; line-height: 0.9; font-weight: 400; letter-spacing: -0.05em; color: #F5F5F3;">work</h2>
+      <p data-reveal="" style="margin: 0 0 22px; font-size: 20px; font-weight: 400; color: #C8C8C5; font-family: 'Pretendard Variable', Pretendard, sans-serif;">문제를 다시 묻고, 경험으로 답한 네 개의 기록</p>
+    </div>
+
+    <p data-reveal="" style="margin: 0 0 56px; font-size: 13px; letter-spacing: 0.18em; color: #8F8F8C;">MY LATEST WORKS</p>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr) 140px 140px; gap: 0 32px; padding-bottom: 18px; border-bottom: 1px solid #333333; font-size: 12px; letter-spacing: 0.16em; color: #8F8F8C;">
+      <span>PROJECT</span><span>특징</span><span>기여도</span><span style="text-align: right;">기간</span>
+    </div>
+
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+      <a data-reveal="" href="{{ p.href }}" onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr) 140px 140px; gap: 0 32px; align-items: baseline; padding: 38px 12px; margin: 0 -12px; border-bottom: 1px solid #333333; cursor: pointer; transition: background 320ms ease, opacity 320ms ease; opacity: {{ p.rowOpacity }};" style-hover="background: #191919;">
+        <span style="font-size: 28px; font-weight: 500; letter-spacing: -0.02em; color: #F5F5F3;">{{ p.title }}</span>
+        <span style="font-size: 15px; line-height: 1.7; color: #C8C8C5; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ p.feature }}</span>
+        <span style="font-size: 15px; color: #C8C8C5; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ p.role }}</span>
+        <span style="font-size: 14px; letter-spacing: 0.04em; color: #8F8F8C; text-align: right;">{{ p.period }}</span>
+      </a>
+    </sc-for>
+
+    <div style="position: fixed; left: 0; top: 0; pointer-events: none; z-index: 20; transform: translate({{ px }}px, {{ py }}px); opacity: {{ previewOpacity }}; transition: opacity 320ms ease;">
+      <div role="img" aria-label="{{ previewLabel }}" style="width: 340px; height: 191px; background-color: #111111; background-image: {{ previewBg }}; background-size: cover; background-position: center; box-shadow: 0 24px 60px rgba(0,0,0,0.55);"></div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5 — About ============ -->
+  <section id="about" data-screen-label="05 About" style="position: relative; background: #111111; padding: 60px 104px 200px; box-sizing: border-box;">
+    <div style="display: flex; align-items: center; gap: 28px; margin-bottom: 96px;">
+      <h2 data-reveal="" style="margin: 0; font-size: 150px; line-height: 0.9; font-weight: 400; letter-spacing: -0.05em; color: #F5F5F3;">about me</h2>
+    </div>
+
+    <div style="opacity: {{ aboutOpacity }}; transition: opacity 420ms ease;">
+      <!-- portrait + fact table -->
+      <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 0 56px; align-items: stretch; margin-bottom: 72px;">
+        <div style="position: relative;">
+        <div data-reveal="" style="position: relative; width: 100%; aspect-ratio: 413 / 531; border: 1px solid #333333; overflow: hidden; background: #F1EFE9;">
+          <img src="/assets/id-photo.png" alt="공은수" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: saturate(0.9) contrast(1.02); opacity: {{ portraitOpacity }}; transition: opacity 420ms ease;" />
+          <img src="/assets/hobby-photo.jpg" alt="필름 카메라를 든 모습" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; filter: saturate(0.88) contrast(1.02); opacity: {{ hobbySlotOpacity }}; transition: opacity 420ms ease;" />
+        </div>
+          <div onClick="{{ toggleAbout }}" title="toggle" style="flex: 0 0 auto; width: 104px; height: 34px; border-radius: 999px; background: {{ toggleTrack }}; display: flex; flex-direction: {{ toggleDir }}; align-items: center; justify-content: space-between; padding: 4px; box-sizing: border-box; cursor: pointer; transition: background 420ms ease, border-color 420ms ease; position: absolute; right: 14px; bottom: 14px; z-index: 3; backdrop-filter: blur(6px);">
+            <div style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: {{ knobColor }}; transition: background 420ms ease;"></div>
+            <span style="flex: 1 1 auto; text-align: center; font-size: 9px; letter-spacing: 0.1em; color: {{ toggleTextColor }}; transition: color 420ms ease;">{{ toggleLabel }}</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; max-width: 620px;">
+          <sc-for list="{{ facts }}" as="fx" hint-placeholder-count="6">
+            <div data-reveal="" style="display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 0 24px; align-items: center; flex: 1 1 0; min-height: 0; padding: 0; border-bottom: {{ fx.line }};">
+              <span style="font-size: 11px; letter-spacing: 0.2em; color: #8F8F8C;">{{ fx.key }}</span>
+              <span style="font-size: 17px; line-height: 1.5; color: #F5F5F3; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ fx.value }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- portrait + narrative -->
+      <div style="margin-top: 80px; max-width: 1080px;">
+        <div style="font-family: 'Pretendard Variable', Pretendard, sans-serif;">
+          <p data-reveal="" style="margin: 0; font-size: 17px; line-height: 2.05; color: #C8C8C5; text-wrap: pretty;">{{ aboutBody }}</p>
+          <div data-reveal="" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 44px;">
+            <sc-for list="{{ tags }}" as="t" hint-placeholder-count="5">
+              <span style="font-size: 13px; letter-spacing: 0.04em; color: #C8C8C5; border: 1px solid #333333; border-radius: 999px; padding: 8px 16px; font-family: 'Space Grotesk', sans-serif; transition: border-color 300ms ease, color 300ms ease;" style-hover="border-color: #8F8F8C; color: #F5F5F3;">{{ t }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Resume overlay ============ -->
+  <div style="position: fixed; inset: 0; z-index: 60; display: {{ docDisplay }}; opacity: {{ docOpacity }}; transition: opacity 380ms ease;">
+    <div onClick="{{ closeDoc }}" style="position: absolute; inset: 0; background: rgba(8,8,8,0.72); backdrop-filter: blur(3px); cursor: pointer;"></div>
+
+    <div style="position: absolute; left: 50%; top: 18px; transform: translateX(-50%); z-index: 3; display: flex; align-items: center; gap: 0; background: #FFFFFF; border-radius: 999px; box-shadow: 0 14px 40px rgba(0,0,0,0.35); padding: 8px 10px; font-family: 'Space Grotesk', sans-serif;">
+      <div onClick="{{ zoomOut }}" title="축소" style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #A3A19B; font-size: 15px; transition: background 220ms ease;" style-hover="background: #F1EFE9;">−</div>
+      <span style="min-width: 54px; text-align: center; font-size: 12px; letter-spacing: 0.04em; color: #111111;">{{ zoomLabel }}</span>
+      <div onClick="{{ zoomIn }}" title="확대" style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #A3A19B; font-size: 15px; transition: background 220ms ease;" style-hover="background: #F1EFE9;">+</div>
+      <div style="width: 1px; height: 22px; background: #E4E1D8; margin: 0 10px;"></div>
+      <div onClick="{{ zoomFit }}" style="font-size: 11px; letter-spacing: 0.14em; color: #A3A19B; padding: 0 12px; cursor: pointer; transition: color 220ms ease;" style-hover="color: #111111;">FIT</div>
+      <div onClick="{{ zoomReset }}" style="font-size: 11px; letter-spacing: 0.1em; color: #A3A19B; padding: 0 12px; cursor: pointer; transition: color 220ms ease;" style-hover="color: #111111;">100%</div>
+      <div style="width: 1px; height: 22px; background: #E4E1D8; margin: 0 10px;"></div>
+      <div title="다운로드" style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #A3A19B; font-size: 14px; transition: background 220ms ease;" style-hover="background: #F1EFE9;">↓</div>
+      <div onClick="{{ closeDoc }}" title="닫기" style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #A3A19B; font-size: 14px; transition: background 220ms ease;" style-hover="background: #F1EFE9;">✕</div>
+    </div>
+
+    <div style="position: absolute; left: 50%; top: 76px; bottom: 28px; transform: translateX(-50%); width: min(1020px, calc(100% - 140px)); background: #FFFFFF; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.55);">
+      <div style="position: absolute; inset: 0; overflow: auto;">
+        <div style="width: {{ zoomPct }}%;">
+        <div style="width: {{ invZoomPct }}%; transform: scale({{ docZoom }}); transform-origin: 0 0; padding: 56px 64px 72px; box-sizing: border-box; font-family: 'Pretendard Variable', Pretendard, sans-serif; color: #111111;">
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 0 56px; align-items: start;">
+            <div style="display: flex; align-items: stretch; gap: 24px;">
+              <div style="flex: 0 0 96px; width: 96px; height: 124px; border: 1px solid #DFDCD3; overflow: hidden; position: relative; background: #F1EFE9;">
+                <img src="/assets/id-photo.png" alt="공은수" style="position: absolute; left: 50%; top: -4%; transform: translateX(-50%); height: 112%; filter: contrast(1.04) saturate(0.9);" />
+              </div>
+              <div style="align-self: center;">
+                <h3 style="margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -0.01em; color: #111111; font-family: 'Space Grotesk', sans-serif;">공은수 Eunsu Kong</h3>
+              </div>
+            </div>
+            <div style="font-size: 14px; line-height: 1.9; color: #4A4A46;">
+              <p style="margin: 0;"><a href="mailto:nuts2192@gmail.com" style="color: #4A4A46; text-decoration: underline;">nuts2192@gmail.com</a></p>
+              <p style="margin: 0;"><a href="tel:01064942192" style="color: #4A4A46; text-decoration: underline;">010-6494-2192</a></p>
+              <p style="margin: 0; line-height: 1.6;">경기도 김포시 유현로 215<br />221동 2602호</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 0 56px; margin-top: 64px; align-items: start;">
+            <div>
+              <p style="margin: 0 0 14px; font-size: 13px; letter-spacing: 0.02em; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">Experience</p>
+              <sc-for list="{{ resume }}" as="r" hint-placeholder-count="3">
+                <div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 0 26px; padding: 22px 0; border-bottom: 1px solid #F0EEE8;">
+                  <div>
+                    <p style="margin: 0; font-size: 14px; font-weight: 600; color: #111111;">{{ r.company }}</p>
+                  </div>
+                  <div>
+                    <p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; color: #111111;">{{ r.role }}</p>
+                    <sc-for list="{{ r.bullets }}" as="b" hint-placeholder-count="2">
+                      <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.75; color: #4A4A46; text-wrap: pretty;">{{ b }}</p>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+
+              <p style="margin: 52px 0 14px; font-size: 13px; letter-spacing: 0.02em; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">자기소개서</p>
+              <sc-for list="{{ letter }}" as="l" hint-placeholder-count="3">
+                <div style="padding: 20px 0; border-bottom: 1px solid #F0EEE8;">
+                  <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #111111;">{{ l.q }}</p>
+                  <p style="margin: 0; font-size: 14px; line-height: 1.85; color: #4A4A46; text-wrap: pretty;">{{ l.a }}</p>
+                </div>
+              </sc-for>
+            </div>
+
+            <div>
+              <p style="margin: 0 0 14px; font-size: 13px; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">About</p>
+              <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #4A4A46; text-wrap: pretty;">사용자의 ‘왜’를 파고들어 문제의 맥락을 정리하고, 이를 실제 사용 가능한 경험으로 연결합니다.</p>
+              <p style="margin: 14px 0 0; font-size: 14px; line-height: 1.8; color: #4A4A46; text-wrap: pretty;">리서치와 데이터, 사용자 행동을 바탕으로 문제를 정의하고 가설을 세운 뒤 프로토타입과 검증을 통해 해결 방향을 구체화합니다. 서비스의 구조와 디자인 시스템을 정리하는 것부터 실제 개발을 고려한 UI 설계와 협업까지, 아이디어가 구현되는 과정 전체를 고민합니다.</p>
+
+              <p style="margin: 44px 0 14px; font-size: 13px; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">Education</p>
+              <p style="margin: 0; font-size: 14px; font-weight: 600; color: #111111;">중부대학교</p>
+              <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.7; color: #A3A19B;">미디어커뮤니케이션학전공 · 2021 – 2026</p>
+
+              <p style="margin: 44px 0 14px; font-size: 13px; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">Tools</p>
+              <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #4A4A46;">Figma · Useberry · Manifast<br />Claude · Gemini<br />Adobe Photoshop · Premiere</p>
+
+              <p style="margin: 44px 0 14px; font-size: 13px; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">Awards</p>
+              <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #4A4A46;">신한 스퀘어브릿지 청년 해커톤 3기 혁신상<br /><span style="color: #A3A19B;">신한금융희망재단 · UX/UI Designer, 2026.07</span><br />자살예방 아이디어 공모전 PT대회<br /><span style="color: #A3A19B;">고양시자살예방센터, 2023.11</span></p>
+
+              <p style="margin: 32px 0 14px; font-size: 13px; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">Certifications</p>
+              <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #4A4A46;">컴퓨터그래픽스운용기능사, 2024.12<br />검색광고마케터 1급, 2024.06</p>
+
+              <p style="margin: 32px 0 14px; font-size: 13px; color: #A3A19B; padding-bottom: 10px; border-bottom: 1px solid #E4E1D8;">Languages</p>
+              <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #4A4A46;">OPIc IM2 (English), 2026.05<br />DELF A2 (Français), 2025.03</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { revealed: false, pastHero: false, fillPos: "50% 50%", fillX: -544, fillY: -300, centerShift: 0, hovered: -1, px: 0, py: 0, aboutOn: false, docOpen: false, zoom: 1 };
+  whyRef = React.createRef();
+
+  // align the text's image fill with where that image actually sits in the hero
+  syncFill = () => {
+    const el = this.whyRef.current;
+    if (!el) return;
+    const sec = el.closest("section");
+    if (!sec) return;
+    const r = el.getBoundingClientRect();
+    const s = sec.getBoundingClientRect();
+    const next = {};
+    const shift = Math.round((s.width - r.width) / 2 - 104);
+    if (shift !== this.state.centerShift) next.centerShift = shift;
+    if (!this.state.revealed) {
+      const x = (s.width - 1440) / 2 - (r.left - s.left);
+      const y = -(r.top - s.top);
+      const pos = Math.round(x) + "px " + Math.round(y) + "px";
+      if (pos !== this.state.fillPos) next.fillPos = pos;
+      if (Math.round(x) !== this.state.fillX) next.fillX = Math.round(x);
+      if (Math.round(y) !== this.state.fillY) next.fillY = Math.round(y);
+    }
+    if (Object.keys(next).length) this.setState(next);
+  };
+
+  componentDidMount() {
+    const tick = (n) => {
+      this.syncFill();
+      if (n > 0) requestAnimationFrame(() => tick(n - 1));
+    };
+    tick(6);
+    this._t = [400, 1200].map((ms) => setTimeout(this.syncFill, ms));
+    window.addEventListener("resize", this.syncFill);
+    this._hdr = () => { const p = window.scrollY > 700; if (p !== this.state.pastHero) this.setState({ pastHero: p }); };
+    window.addEventListener("scroll", this._hdr, { passive: true });
+    this._hdr();
+    const el = this.whyRef.current;
+    const sec = el && el.closest("section");
+    if (sec && window.ResizeObserver) {
+      this._ro = new ResizeObserver(this.syncFill);
+      this._ro.observe(sec);
+      this._ro.observe(el);
+    }
+    const img = sec && sec.querySelector("img");
+    if (img) {
+      if (!img.complete) img.addEventListener("load", this.syncFill, { once: true });
+      this._img = img;
+    }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this.syncFill);
+    this.setupReveal();
+    this._rt = setTimeout(this.setupReveal, 500);
+  }
+
+  setupReveal = () => {
+    const els = Array.from(document.querySelectorAll("#highlights [data-reveal], #work [data-reveal], #about [data-reveal]"));
+    if (!els.length) return;
+    els.forEach((el) => {
+      if (el.dataset.revealInit) return;
+      el.dataset.revealInit = "1";
+      el.style.opacity = "0";
+      el.style.transform = "translateX(-56px)";
+      el.style.transition = "opacity 900ms cubic-bezier(0.22,1,0.36,1), transform 1000ms cubic-bezier(0.22,1,0.36,1)";
+      el.style.willChange = "opacity, transform";
+    });
+    if (!this._sweepBound) {
+      this._sweepBound = true;
+      this._sweep = () => {
+        if (this._sweepRaf) return;
+        this._sweepRaf = requestAnimationFrame(() => {
+          this._sweepRaf = 0;
+          const list = Array.from(document.querySelectorAll("#highlights [data-reveal], #work [data-reveal], #about [data-reveal]"));
+          const line = window.innerHeight * 0.92;
+          list.forEach((el) => {
+            if (el.dataset.revealDone) return;
+            const rect = el.getBoundingClientRect();
+            if (rect.top >= line) return;
+            el.dataset.revealDone = "1";
+            const sec = el.closest("section");
+            const sib = sec ? Array.from(sec.querySelectorAll("[data-reveal]")) : [el];
+            el.style.transitionDelay = Math.min(Math.max(sib.indexOf(el), 0), 8) * 90 + "ms";
+            el.style.opacity = "1";
+            el.style.transform = "translateX(0)";
+          });
+        });
+      };
+      window.addEventListener("scroll", this._sweep, { passive: true });
+      window.addEventListener("resize", this._sweep);
+      window.addEventListener("hashchange", this._sweep);
+      this._sweepTimer = setInterval(this._sweep, 250);
+    }
+    this._sweep();
+  };
+
+  componentDidUpdate() {
+    this.syncFill();
+    this.setupReveal();
+  }
+
+  componentWillUnmount() {
+    (this._t || []).forEach(clearTimeout);
+    clearTimeout(this._rt);
+    clearInterval(this._sweepTimer);
+    if (this._sweep) { window.removeEventListener("scroll", this._sweep); window.removeEventListener("resize", this._sweep); window.removeEventListener("hashchange", this._sweep); }
+    if (this._hdr) window.removeEventListener("scroll", this._hdr);
+    if (this._ro) this._ro.disconnect();
+    window.removeEventListener("resize", this.syncFill);
+  }
+
+  scrollToId(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.pageYOffset;
+    this.animateScroll(
+      () => window.pageYOffset,
+      (v) => window.scrollTo(0, v),
+      Math.max(0, y),
+      700
+    );
+  }
+
+  animateScroll(getPos, setPos, target, dur) {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    const start = getPos();
+    const delta = target - start;
+    if (Math.abs(delta) < 1) { setPos(target); return; }
+    const t0 = performance.now();
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    let ran = false;
+    const step = (now) => {
+      ran = true;
+      const t = Math.min(1, (now - t0) / dur);
+      setPos(start + delta * ease(t));
+      if (t < 1) this._raf = requestAnimationFrame(step);
+      else this._raf = 0;
+    };
+    this._raf = requestAnimationFrame(step);
+    setTimeout(() => {
+      if (ran) return;
+      if (this._raf) cancelAnimationFrame(this._raf);
+      this._raf = 0;
+      setPos(target);
+    }, 80);
+  }
+
+  covers = {
+    "vivizip": "/assets/vivizip/01.png",
+    "kb": "/assets/kb/01.png",
+    "musinsa": "/assets/musinsa/01.png",
+    "co-hi": "/assets/cohi/01.png"
+  };
+
+  renderVals() {
+    const r = this.state.revealed;
+    const works = [
+      { title: "VIVIZIP", feature: "외국인 유학생의 한국 정착 경험 개선 · 실제 서비스 개발", role: "Team Project (UX/UI 및 PPT 제작)", period: "2026.06 – 07" },
+      { title: "KB", feature: "정기지출 관리 경험 개선 · 신규 기능 제안", role: "UX/UI 100%", period: "2026.02 – 03" },
+      { title: "MUSINSA", feature: "복잡한 가격 정보의 인식 개선 · UX 리서치", role: "UX/UI 100%", period: "2025.10 – 12" },
+      { title: "CO-hi", feature: "위치와 분위기를 연결한 카페 탐색 경험 · 신규 앱 디자인", role: "UX/UI 100%", period: "2025.12 – 02" }
+    ];
+    const h = this.state.hovered;
+    const on = this.state.aboutOn;
+    const profile = {
+      facts: [
+        { key: "NAME", value: "공은수 · Eunsu Kong" },
+        { key: "AGE", value: "2002.12.01" },
+        { key: "TOOLS", value: "Figma · Useberry · Manifast · Claude · Gemini · Adobe Photoshop · Premiere" },
+        { key: "BASED IN", value: "Seoul · KR" },
+        { key: "WORKS LIKE", value: "WHY를 찾고, 문제를 다시 정의하고, 경험으로 답합니다." },
+        { key: "BELIEVES", value: "디자인은 보이는 것을 넘어, 행동을 바꾸는 일이라고 믿습니다." }
+      ],
+      lead: "문제를 정의하는 사람이 결국 답의 모양을 정한다고 생각합니다.",
+      body: "팀에서는 질문을 먼저 정리하는 역할을 합니다. 화면을 그리기 전에 ‘이 기능이 누구의 어떤 곤란을 없애는지’를 한 문장으로 합의하고 시작합니다. 리서치와 개발 사이에서 말을 옮기는 일을 즐기고, 근거가 생기면 제 초안을 빠르게 버립니다. 마감은 지키되, 마지막까지 고칠 수 있는 여백을 일정 안에 남겨 둡니다.",
+      tags: ["Problem Framing", "User Research", "Design System", "Handoff", "Prototyping"]
+    };
+    const inside = {
+      facts: [
+        { key: "CAMERA", value: "디지털 카메라 · 풍경 속 사람 촬영 · 매달 인스타 기록" },
+        { key: "RUNNING", value: "주 3회 5~10K 저녁 러닝" },
+        { key: "BOOK", value: "여행에세이 · 계절과 관련된 책 독서" },
+        { key: "PLAYLIST", value: "인디밴드 · 옛날 노래" },
+        { key: "COLLECTION", value: "영화 포스터 · 기차표" },
+        { key: "COFFEE", value: "아메리카노 · 고소한 향미" }
+      ],
+      lead: "",
+      body: "아름답고 새로운 것들에 언제나 마음이 가는 편입니다. 그중에서도 자연 속에서 책을 읽고, 러닝을 하고, 사진을 찍으며 순간을 담아내는 시간을 좋아합니다. 이런 경험들은 일상에 새로운 시선을 더하고, 제 디자인에 영감을 주는 소중한 시간이 됩니다.",
+      tags: ["Nature", "Photography", "Running", "Books", "Travel", "Music", "Movies"]
+    };
+    const ab = on ? inside : profile;
+    return {
+      facts: ab.facts.map((x, i) => ({ key: x.key, value: x.value, line: i === ab.facts.length - 1 ? "none" : "1px solid #262626" })),
+      aboutLead: ab.lead,
+      aboutBody: ab.body,
+      tags: ab.tags,
+      aboutOpacity: 1,
+      toggleAbout: () => this.setState({ aboutOn: !on }),
+      toggleTrack: on ? "#F5F5F3" : "#161616",
+      knobColor: on ? "#111111" : "#8F8F8C",
+      toggleDir: on ? "row-reverse" : "row",
+      portraitOpacity: on ? 0 : 1,
+      hobbySlotOpacity: on ? 1 : 0,
+      toggleTextColor: on ? "#111111" : "#8F8F8C",
+      toggleLabel: on ? "HOBBIES" : "PROFILE",
+      projects: works.map((d, i) => ({
+        title: d.title, feature: d.feature, role: d.role, period: d.period,
+        href: "project.html?p=" + d.title.toLowerCase().replace(/\s+/g, "-"),
+        rowOpacity: h === -1 || h === i ? 1 : 0.42,
+        enter: () => this.setState({ hovered: i }),
+        leave: () => this.setState({ hovered: -1 })
+      })),
+      track: (e) => this.setState({ px: e.clientX + 28, py: e.clientY - 116 }),
+      px: this.state.px,
+      py: this.state.py,
+      previewOpacity: h === -1 ? 0 : 1,
+      previewLabel: h === -1 ? "" : works[h].title.toUpperCase(),
+      previewBg: h === -1 ? "none" : 'url("' + this.covers[works[h].title.toLowerCase()] + '")',
+      bgOpacity: r ? 1 : 0,
+      inkOpacity: r ? 1 : 0,
+      hintOpacity: r ? 0 : 1,
+      whyRef: this.whyRef,
+      whyShift: r ? 0 : this.state.centerShift,
+      copyOpacity: r ? 1 : 0,
+      copyShift: r ? 0 : 48,
+      fillSize: "1440px 900px",
+      fillPos: this.state.fillPos,
+      fillX: this.state.fillX,
+      fillY: this.state.fillY,
+      c1o: r ? 1 : 0, c2o: r ? 1 : 0, c3o: r ? 1 : 0, c4o: r ? 1 : 0,
+      c1t: r ? "translate(0px, 0px) scale(1)" : "translate(-150px, 78px) scale(0.9)",
+      c2t: r ? "translate(0px, 0px) scale(1)" : "translate(-190px, 40px) scale(0.9)",
+      c3t: r ? "translate(0px, 0px) scale(1)" : "translate(-110px, -60px) scale(0.9)",
+      c4t: r ? "translate(0px, 0px) scale(1)" : "translate(-170px, -34px) scale(0.9)",
+      revealOn: () => this.setState({ revealed: true }),
+      headerInk: (this.state.revealed && !this.state.pastHero) ? "#111111" : "#F5F5F3",
+      headerVeil: (this.state.revealed && !this.state.pastHero) ? "linear-gradient(180deg, rgba(239,237,230,0.85) 0%, rgba(239,237,230,0.35) 46%, rgba(239,237,230,0) 100%)" : "linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 46%, rgba(0,0,0,0) 100%)",
+      headerShadow: (this.state.revealed && !this.state.pastHero) ? "none" : "0 1px 14px rgba(0,0,0,0.45)",
+      revealOff: () => {},
+      goWork: () => this.scrollToId("cta"),
+      goHighlights: () => this.scrollToId("highlights"),
+      goWorkSection: () => this.scrollToId("work"),
+      goAbout: () => this.scrollToId("about"),
+      docDisplay: this.state.docOpen ? "block" : "none",
+      docOpacity: this.state.docOpen ? 1 : 0,
+      docZoom: this.state.zoom,
+      zoomLabel: Math.round(this.state.zoom * 100) + "%",
+      zoomPct: Math.round(this.state.zoom * 100),
+      invZoomPct: Math.round((1 / this.state.zoom) * 10000) / 100,
+      openDoc: () => this.setState({ docOpen: true }),
+      closeDoc: () => this.setState({ docOpen: false }),
+      zoomIn: () => this.setState({ zoom: Math.min(1.8, Math.round((this.state.zoom + 0.1) * 10) / 10) }),
+      zoomOut: () => this.setState({ zoom: Math.max(0.6, Math.round((this.state.zoom - 0.1) * 10) / 10) }),
+      zoomFit: () => this.setState({ zoom: 0.8 }),
+      zoomReset: () => this.setState({ zoom: 1 }),
+      resume: [
+        { company: "VIVIZIP", role: "UX/UI Designer", bullets: ["기업 과제 기반 신규 기능 설계 및 개발자 협업을 통한 실제 서비스 구현"] },
+        { company: "KB", role: "UX/UI Designer", bullets: ["기존 금융 서비스의 정기 지출 관리 경험 분석 및 신규 기능 설계"] },
+        { company: "MUSINSA", role: "UX/UI Designer", bullets: ["5 Whys와 사용자 테스트를 통한 가격 정보 인식 문제 정의 및 UI 개선"] },
+        { company: "CO-hi", role: "UX/UI Designer", bullets: ["위치·분위기 기반 카페 탐색 서비스 0→1 UX/UI 설계"] }
+      ],
+      letter: [
+        { q: "왜 UX/UI 디자인인가", a: "저는 ‘왜?’라는 질문을 쉽게 넘기지 못합니다. 사용자의 말과 행동을 따라가며 문제의 맥락을 다시 보고, 처음의 가설이 틀렸다면 기꺼이 다시 시작합니다." },
+        { q: "어떻게 일하는가", a: "생각한 것을 직접 만들어보고, 눈으로 확인하는 편입니다. 리서치에서 발견한 것을 화면으로 옮기고, 프로토타입과 테스트를 거치며 생각과 경험 사이의 차이를 줄여갑니다." },
+        { q: "무엇을 만들고 싶은가", a: "복잡한 문제를 단순하게 설명하는 디자인보다, 사용자가 자연스럽게 이해하고 행동할 수 있는 경험을 만들고 싶습니다. 좋은 질문에서 시작한 디자인이 실제 서비스로 이어지는 과정을 끝까지 함께하고 싶습니다." }
+      ],
+      groups: [
+        {
+          label: "AWARDS",
+          rows: [
+            { title: "신한 스퀘어브릿지 청년 해커톤 3기 · 혁신상", org: "신한금융희망재단", detail: "UX/UI Designer · 기획부터 프로토타입까지", date: "2026.07" },
+            { title: "자살예방 아이디어 공모전 PT대회 · 금상", org: "고양시자살예방센터", detail: "문제 정의 · 아이디어 제안 및 발표", date: "2023.11" }
+          ]
+        },
+        {
+          label: "CERTIFICATIONS",
+          rows: [
+            { title: "컴퓨터그래픽스운용기능사", org: "한국산업인력공단", detail: "그래픽 · 편집 기본기", date: "2024.12" },
+            { title: "검색광고마케터 1급", org: "한국자격검정평가진흥원", detail: "사용자 · 마케팅 관점", date: "2024.06" }
+          ]
+        },
+        {
+          label: "LANGUAGES",
+          rows: [
+            { title: "OPIc IM2", org: "ACTFL", detail: "English", date: "2026.05" },
+            { title: "DELF A2", org: "France Éducation international", detail: "Français", date: "2025.03" }
+          ]
+        }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

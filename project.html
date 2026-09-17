@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eunsu Kong — Project</title>
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #111111; }
+  body, p, span, h1, h2, h3, h4, a, div { word-break: keep-all; overflow-wrap: break-word; }
+  a { color: #F5F5F3; text-decoration: none; }
+  a:hover { color: #8F8F8C; }
+  #pdfscroll { scrollbar-width: none; -ms-overflow-style: none; }
+  #pdfscroll::-webkit-scrollbar { width: 0; height: 0; }
+</style>
+</helmet>
+<div style="width: 100%; max-width: 1440px; min-width: 1100px; margin: 0 auto; background: #111111; font-family: 'Space Grotesk', 'Pretendard Variable', Pretendard, sans-serif; color: #F5F5F3;">
+
+  <header style="height: 96px; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; box-sizing: border-box;">
+    <a href="/" style="font-size: 17px; font-weight: 500; letter-spacing: 0.02em;">Eunsu Kong</a>
+    <nav style="display: flex; gap: 40px; font-size: 14px; letter-spacing: 0.08em;">
+      <a href="/#work" style="padding-bottom: 3px; border-bottom: 1px solid rgba(245,245,243,0.55);" style-hover="color: #8F8F8C; border-bottom-color: rgba(245,245,243,0.15);">work</a>
+      <a href="/#about" style="padding-bottom: 3px;" style-hover="color: #8F8F8C;">about me</a>
+      <a href="/#highlights" style="padding-bottom: 3px;" style-hover="color: #8F8F8C;">contact</a>
+    </nav>
+  </header>
+
+  <section data-screen-label="Project — deck" style="padding: 24px 56px 0; box-sizing: border-box;">
+    <div style="position: relative; height: 760px; max-width: 1200px; margin: 0 auto; background: #EFEDE6; border-radius: 26px; overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,0.5);">
+      <div id="pdfscroll" ref="{{ scrollRef }}" onScroll="{{ onScroll }}" style="position: absolute; inset: 0; overflow-y: overlay; overflow-y: auto; overflow-x: hidden; padding: 0; box-sizing: border-box; display: block;">
+        <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="6">
+          <div style="position: relative; display: block; flex: 0 0 auto; width: 100%; margin-bottom: -1px; background: transparent; overflow: hidden; min-height: {{ pg.minHeight }};">
+            <div role="img" aria-label="{{ pg.label }}" style="display: block; width: 100%; aspect-ratio: {{ pg.ratio }}; background-image: {{ pg.bg }}; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+            <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: space-between; padding: 22px 28px; opacity: {{ pg.slotOpacity }};">
+              <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.14em; color: #A9A79E;">{{ pg.label }}</span>
+              <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.14em; color: #C9C7BE;">{{ pg.num }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="position: absolute; right: 18px; top: 22px; bottom: 22px; width: 6px; pointer-events: none;">
+        <div ref="{{ thumbRef }}" style="position: absolute; left: 0; top: 0; width: 6px; height: 80px; border-radius: 3px; background: rgba(17,17,17,0.3);"></div>
+      </div>
+
+      <div onClick="{{ toTop }}" title="맨 위로" style="position: absolute; right: 26px; bottom: 26px; width: 46px; height: 46px; border-radius: 50%; background: #111111; color: #F5F5F3; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 26px rgba(0,0,0,0.35); opacity: {{ topBtnOpacity }}; transform: translateY({{ topBtnShift }}px); transition: opacity 320ms ease, transform 320ms ease, background 260ms ease;" style-hover="background: #2B2B2B;">
+        <span style="font-size: 17px; line-height: 1; margin-top: -2px;">↑</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Project — info" style="padding: 36px 56px 56px; box-sizing: border-box;">
+    <div style="display: grid; grid-template-columns: minmax(220px, 300px) minmax(0, 1fr); gap: 0 64px; padding-top: 28px; border-top: 1px solid #333333; max-width: 1200px; margin: 0 auto;">
+      <div>
+        <p style="margin: 0; font-size: 15px; font-weight: 500; color: #F5F5F3;">{{ title }}</p>
+        <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.75; color: #8F8F8C; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ discipline }}</p>
+        <p style="margin: 28px 0 0; font-size: 13px; letter-spacing: 0.06em; color: #8F8F8C;">{{ role }} · {{ period }}</p>
+      </div>
+      <div style="max-width: 940px; font-family: 'Pretendard Variable', Pretendard, sans-serif;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.85; color: #E4E4E1;">{{ lead }}</p>
+        <p style="margin: 22px 0 0; font-size: 15px; line-height: 1.9; color: #C8C8C5; text-wrap: pretty; white-space: pre-line;">{{ body }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Project — next" style="padding: 0 56px 140px; box-sizing: border-box;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px;">
+        <p style="margin: 0; font-size: 13px; letter-spacing: 0.18em; color: #8F8F8C;">NEXT PROJECTS</p>
+      </div>
+
+      <div style="overflow: hidden; padding: 22px 28px; margin: 0 -28px;">
+        <div style="display: flex; gap: 24px; transition: transform 620ms cubic-bezier(0.22,1,0.36,1);">
+          <sc-for list="{{ others }}" as="o" hint-placeholder-count="3">
+            <a href="{{ o.href }}" style="flex: 0 0 calc((100% - 48px) / 3); min-width: 0; display: block; color: #F5F5F3; transition: transform 420ms cubic-bezier(0.22,1,0.36,1), opacity 420ms ease; transform-origin: 50% 40%;" style-hover="transform: scale(1.05); z-index: 2;">
+              <div role="img" aria-label="{{ o.title }}" style="height: 212px; background-color: #1A1A1A; background-image: {{ o.cover }}; background-size: cover; background-position: center; border-radius: 14px; display: flex; align-items: flex-end; padding: 20px 22px; box-sizing: border-box; transition: transform 420ms cubic-bezier(0.22,1,0.36,1), background 420ms ease, box-shadow 420ms ease;" style-hover="transform: translateY(-8px); box-shadow: 0 26px 60px rgba(0,0,0,0.5);"></div>
+              <p style="margin: 18px 0 0; font-size: 18px; font-weight: 500; letter-spacing: -0.01em;">{{ o.title }}</p>
+              <p style="margin: 6px 0 0; font-size: 14px; color: #8F8F8C; font-family: 'Pretendard Variable', Pretendard, sans-serif;">{{ o.meta }}</p>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: flex-end; margin-top: 44px;">
+        <a href="/#work" style="display: block; width: fit-content; font-size: 13px; letter-spacing: 0.12em; color: #C8C8C5; border-bottom: 1px solid #333333; padding-bottom: 4px;" style-hover="color: #F5F5F3; border-bottom-color: #8F8F8C;">← BACK</a>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { scrolled: 0 };
+  scrollRef = React.createRef();
+
+  decks = {
+    "vivizip": [
+      "/assets/vivizip/01.png",
+      "/assets/vivizip/02.png",
+      "/assets/vivizip/03.png",
+      "/assets/vivizip/04.png",
+      "/assets/vivizip/05.png",
+      "/assets/vivizip/06.png"
+    ],
+    "kb": [
+      "/assets/kb/01.png",
+      "/assets/kb/02.png",
+      "/assets/kb/03.png",
+      "/assets/kb/04.png",
+      "/assets/kb/05.png",
+      "/assets/kb/06.png",
+      "/assets/kb/07.png"
+    ],
+    "musinsa": [
+      "/assets/musinsa/01.png",
+      "/assets/musinsa/02.png",
+      "/assets/musinsa/03.png",
+      "/assets/musinsa/04.png",
+      "/assets/musinsa/05.png",
+      "/assets/musinsa/06.png"
+    ],
+    "co-hi": [
+      "/assets/cohi/01.png",
+      "/assets/cohi/02.png",
+      "/assets/cohi/03.png",
+      "/assets/cohi/04.png",
+      "/assets/cohi/05.png",
+      "/assets/cohi/06.png",
+      "/assets/cohi/07.png"
+    ]
+  };
+
+  data = {
+    "vivizip": {
+      title: "VIVIZIP, 2026",
+      discipline: "Team Project\nUX/UI · PPT 제작",
+      role: "UX/UI 100%",
+      period: "2026.06 – 07",
+      lead: "외국인 유학생이 한국에서 집을 구하는 과정에서 겪는 문제를 개선한 실제 서비스 개발 프로젝트입니다.",
+      body: "신한 스퀘어브릿지 청년 해커톤에서 YESFUTURE의 기업 과제를 바탕으로, 개발자들과 함께 프로젝트를 진행했습니다. 기업과의 미팅 및 유학생·국제처 대상 UX 리서치를 통해, 기존 서비스가 외국인 유학생의 일자리와 비자 문제를 다루고 있지만 주거 문제는 충분히 해결하지 못하고 있다는 점을 발견했습니다.\n\n이를 바탕으로 유학생이 실제 주거지를 탐색하는 과정에서 겪는 문제를 정의하고, 해결을 위한 기능을 기획했습니다. 기능 명세, 핵심 UI, 와이어프레임을 설계하고 개발자들과 구현 방향을 조율했으며, 최종 발표 자료 제작과 기업 Q&A를 담당했습니다."
+    },
+    "kb": {
+      title: "KB, 2026",
+      discipline: "Product Design\n신규 기능 제안",
+      role: "UX/UI 100%",
+      period: "2026.02 – 03",
+      lead: "세이브 박스의 낮은 인지도에서 출발해, 정기지출 관리에 특화된 새로운 금융 경험을 제안한 프로젝트입니다.",
+      body: "설문·심층인터뷰를 통해 정기지출 관리 니즈를 발견하고 신규 기능으로 확장했습니다. 기존 KB UI를 활용해 자연스러운 진입 경험을 설계했으며, UT 결과 기능 사용 성공률이 77.8% 증가했습니다."
+    },
+    "musinsa": {
+      title: "MUSINSA, 2025",
+      discipline: "UX Research\n가격 정보 인식 개선",
+      role: "UX/UI 100%",
+      period: "2025.10 – 12",
+      lead: "실제 사용자 행동을 관찰하고 UX 리서치를 통해 제품 상세 페이지의 가격 인식 문제를 발견하고 개선한 프로젝트입니다.",
+      body: "CJM·TOL을 통해 불편 지점을 발견하고 5 WHY로 원인을 좁혀 가격 정보의 가시성과 피드백 문제를 개선했습니다. UT 결과 개선된 버튼의 클릭률이 기존 대비 80% 상승했습니다."
+    },
+    "co-hi": {
+      title: "CO-hi, 2025",
+      discipline: "Product Design\n신규 앱 디자인",
+      role: "UX/UI 100%",
+      period: "2025.12 – 2026.02",
+      lead: "흩어진 카페 탐색 경로를 하나로 통합해, 위치와 취향을 기반으로 원하는 카페를 발견할 수 있도록 설계한 신규 앱 프로젝트입니다.",
+      body: "정량·정성 리서치를 통해 카페의 위치와 분위기를 여러 경로에서 따로 탐색해야 하는 불편을 발견하고, 한 앱에서 위치와 취향을 설정해 카페를 탐색할 수 있는 서비스 구조를 설계했습니다.\n\n디자인 전 설문조사를 통해 사용자의 선호 분위기와 원두 등을 파악하고 UI 구성과 콘텐츠 우선순위에 반영했습니다."
+    }
+  };
+
+  key() {
+    const q = new URLSearchParams(window.location.search).get("p");
+    const h = (window.location.hash || "").replace("#", "");
+    const k = q || h;
+    return this.data[k] ? k : Object.keys(this.data)[0];
+  }
+
+  thumbRef = React.createRef();
+
+  componentDidMount() {
+    this.updateThumb();
+    this._t = setInterval(() => this.updateThumb(), 400);
+  }
+
+  componentWillUnmount() { clearInterval(this._t); }
+
+  updateThumb = () => {
+    const el = this.scrollRef.current, th = this.thumbRef.current;
+    if (!el || !th) return;
+    const trackH = el.clientHeight - 44;
+    const ratio = el.clientHeight / el.scrollHeight;
+    const h = Math.max(48, trackH * ratio);
+    const max = el.scrollHeight - el.clientHeight;
+    const y = max > 0 ? (el.scrollTop / max) * (trackH - h) : 0;
+    th.style.height = h + "px";
+    th.style.transform = "translateY(" + y + "px)";
+    th.style.opacity = ratio >= 1 ? "0" : "1";
+  };
+
+  onScroll = (e) => {
+    this.updateThumb();
+    const t = e.target.scrollTop;
+    if ((t > 160) !== (this.state.scrolled > 160)) this.setState({ scrolled: t });
+    else this.state.scrolled = t;
+  };
+
+  animateScroll(getPos, setPos, target, dur) {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    const start = getPos();
+    const delta = target - start;
+    if (Math.abs(delta) < 1) { setPos(target); return; }
+    const t0 = performance.now();
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    let ran = false;
+    const step = (now) => {
+      ran = true;
+      const t = Math.min(1, (now - t0) / dur);
+      setPos(start + delta * ease(t));
+      if (t < 1) this._raf = requestAnimationFrame(step);
+      else this._raf = 0;
+    };
+    this._raf = requestAnimationFrame(step);
+    setTimeout(() => {
+      if (ran) return;
+      if (this._raf) cancelAnimationFrame(this._raf);
+      this._raf = 0;
+      setPos(target);
+    }, 80);
+  }
+
+  renderVals() {
+    const k = this.key();
+    const d = this.data[k];
+    const show = this.state.scrolled > 160;
+    const others = Object.keys(this.data).filter((x) => x !== k).map((x) => ({
+      href: "project.html?p=" + x,
+      cover: this.decks[x] ? 'url("' + this.decks[x][0] + '")' : "none",
+      title: this.data[x].title.split(",")[0],
+      meta: this.data[x].discipline.split("\n")[0] + " · " + this.data[x].period
+    }));
+    return {
+      others,
+      ...d,
+      pages: (this.decks[k] || Array.from({ length: 6 }, () => null)).map((src, i) => ({
+        src: src || "",
+        label: src ? (i === 0 ? "COVER" : "PAGE") : "PDF PAGE",
+        num: String(i + 1).padStart(2, "0"),
+        hasSrc: !!src,
+        bg: src ? 'url("' + src + '")' : "none",
+        ratio: "16 / 9",
+        minHeight: src ? "120px" : "300px",
+        imgOpacity: src ? 1 : 0,
+        slotOpacity: src ? 0 : 1
+      })),
+      scrollRef: this.scrollRef,
+      thumbRef: this.thumbRef,
+      onScroll: this.onScroll,
+      topBtnOpacity: show ? 1 : 0,
+      topBtnShift: show ? 0 : 10,
+      toTop: () => {
+        const el = this.scrollRef.current;
+        if (!el) return;
+        this.animateScroll(() => el.scrollTop, (v) => { el.scrollTop = v; }, 0, 620);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
